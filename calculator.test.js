@@ -21,3 +21,8 @@ it("Should return 7 when 5 and 2 are in the string", () => {
 it("Should return 12 when 6, 4, 2 in the string ", () => {
 	expect(add("6,4,2")).toBe(12);
 });
+
+// sum of two numbers split by \n
+it("Should return 8 when 6 \n 2 in the string ", () => {
+	expect(add("6\n2")).toBe(8);
+});

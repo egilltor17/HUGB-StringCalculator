@@ -4,10 +4,10 @@ function add(numbers) {
 	//console.log("add function called");
 	if(numbers == "") {
 		return 0;
-	} else if(numbers.includes(",")) {
-		var numberArr = numbers.split(",");
+	} else if(numbers.includes(",") || numbers.includes("\n")) {
+		var numberArr = numbers.split(/[\s,]+/);
 		var sum = 0;
-		for(i = 0; i < numberArr.length; i++) {
+		for(var i = 0; i < numberArr.length; i++) {
 			sum += parseInt(numberArr[i]);
 		}
 		return sum;
