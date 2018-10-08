@@ -1,6 +1,6 @@
 # modules folder
-./node_modules
+/node_modules
 
 # npm stuff
-package.json
-package-lock.json
+# package.json
+# package-lock.json

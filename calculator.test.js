@@ -8,8 +8,7 @@ it("Should return zero on empty string", () => {
 });
 
 
-/*
-it("Should return... ", () => {
-	expect().toBe();
+// One number
+it("Should return number then there is only one number in the string ", () => {
+	expect(add("5")).toBe(5);
 });
-*/
