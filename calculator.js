@@ -1,14 +1,18 @@
 // Calculator
 
-function add(number) {
+function add(numbers) {
 	//console.log("add function called");
-	if(number == "") {
+	if(numbers == "") {
 		return 0;
-	} else if(number.includes(",")) {
-		var numberArr = number.split(",");
-		return parseInt(numberArr[0]) + parseInt(numberArr[1]);
+	} else if(numbers.includes(",")) {
+		var numberArr = numbers.split(",");
+		var sum = 0;
+		for(i = 0; i < numberArr.length; i++) {
+			sum += parseInt(numberArr[i]);
+		}
+		return sum;
 	} else {
-		return parseInt(number);
+		return parseInt(numbers);
 	}
 	
 	
