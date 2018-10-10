@@ -20,7 +20,9 @@ function add(numbers) {
 		var numberArr = numbers.split(/[\n,]+/);
 		var sum = 0;
 		for(var i = 0; i < numberArr.length; i++) {
-			sum += parseInt(numberArr[i]);
+			if(parseInt(numberArr[i]) <= 1000) {
+				sum += parseInt(numberArr[i]);
+			}
 		}
 		return sum;
 	} else {
