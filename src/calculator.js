@@ -9,13 +9,7 @@ function add(numbers) {
 		var foo = numbers.substring(nl_index);
 		var regexp = new RegExp("[" + delimiter + "\n,]+","g");
 		var numberArr = foo.split(regexp);
-		var sum = 0;
-		for(var i = 0; i < numberArr.length; i++){
-			if(parseInt(numberArr[i]) <= 1000){
-				sum += parseInt(numberArr[i]);
-			}
-		}
-		return sum;
+		return sum(numberArr);
 	} else if(numbers.includes("-")) {
 		var numberArr = numbers.split(/['\n',',']+/);
 		var error = "";
@@ -31,16 +25,20 @@ function add(numbers) {
 		throw ("Negatives not allowed: " + error);
 	} else if(numbers.includes(",") || numbers.includes("\n")) {
 		var numberArr = numbers.split(/[\n,]+/);
-		var sum = 0;
-		for(var i = 0; i < numberArr.length; i++) {
-			if(parseInt(numberArr[i]) <= 1000) {
-				sum += parseInt(numberArr[i]);
-			}
-		}
-		return sum;
+		return sum(numberArr);
 	} else {
 		return parseInt(numbers);
 	}
+}
+
+function sum(numberArr) {
+	var sum = 0;
+	for(var i = 0; i < numberArr.length; i++) {
+		if(parseInt(numberArr[i]) <= 1000) {
+			sum += parseInt(numberArr[i]);
+		}
+	}
+	return sum;
 }
 
 module.exports = add;
