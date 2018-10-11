@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/egilltor17/StringCalculator#readme",
   "devDependencies": {
-    "express": "^4.16.3",
     "jest": "^23.6.0"
   }
 }
