@@ -1,5 +1,4 @@
-// Calculator Tests
-// Import out calculator.js
+// calculator.test.js
 const add = require("./calculator");
 
 // Empty string
@@ -22,13 +21,13 @@ it("Should return 12 when 6, 4, 2 in the string ", () => {
 	expect(add("6,4,2")).toBe(12);
 });
 
-// The sum of two numbers split by '\'n
-it("Should return 8 when 6 '\'n 2 in the string ", () => {
+// The sum of two numbers split by \n
+it("Should return 8 when 6 \\n 2 in the string ", () => {
 	expect(add("6\n2")).toBe(8);
 });
 
-// The sum of three numbers split by '\'n and ,
-it("Should return 9 when 6 '\'n 2 ,1 in the string ", () => {
+// The sum of three numbers split by \n and ,
+it("Should return 9 when 6 \\n 2 ,1 in the string ", () => {
 	expect(add("6\n2,1")).toBe(9);
 });
 
@@ -40,6 +39,16 @@ it("Should throw exception when -6,  2 in the string", () => {
 });
 
 // The sum of three numbers with numbers larger than 1000
-it("Should return 27 when 6 '\'n 21 ,1001 in the string ", () => {
+it("Should return 27 when 6 \\n 21 ,1001 in the string ", () => {
 	expect(add("6\n21,1001")).toBe(27);
+});
+
+// The sum of two numbers with custom delimiter ;
+it("Should return 35 when //; \\n 14 ; 21 in the string ", () => {
+	expect(add("//;\n14;21")).toBe(35);
+});
+
+// The sum of three numbers with a mix of custom delimiter Wasup and , \\n
+it("Should return 32 when //Wasup \\n 21 Wasup 11 , 4 \\n 2 in the string ", () => {
+	expect(add("//Wasup\n21Wasup11,4\n2")).toBe(38);
 });
