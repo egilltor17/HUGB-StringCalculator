@@ -3,13 +3,6 @@
 function add(numbers) {
 	if(numbers == "") {
 		return 0;
-	} else if(numbers.startsWith("//")) {
-		var nl_index = numbers.indexOf("\n");
-		var delimiter = numbers.substring(2, nl_index);
-		var foo = numbers.substring(nl_index);
-		var regexp = new RegExp("[" + delimiter + "\n,]+","g");
-		var numberArr = foo.split(regexp);
-		return sum(numberArr);
 	} else if(numbers.includes("-")) {
 		var numberArr = numbers.split(/['\n',',']+/);
 		var error = "";
@@ -23,8 +16,15 @@ function add(numbers) {
 			}
 		}
 		throw ("Negatives not allowed: " + error);
+	} else if(numbers.startsWith("//")) {
+		var nl_index = numbers.indexOf("\n");
+		var delimiter = numbers.substring(2, nl_index);
+		var foo = numbers.substring(nl_index);
+		var regexp = new RegExp("[" + delimiter + "\n,]+","g");
+		var numberArr = foo.split(regexp);
+		return sum(numberArr);
 	} else if(numbers.includes(",") || numbers.includes("\n")) {
-		var numberArr = numbers.split(/[\n,]+/);
+		var numberArr = numbers.split(/['\n',',']+/);
 		return sum(numberArr);
 	} else {
 		return parseInt(numbers);

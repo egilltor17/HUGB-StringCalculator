@@ -52,3 +52,10 @@ it("Should return 35 when //; \\n 14 ; 21 in the string ", () => {
 it("Should return 32 when //Wasup \\n 21 Wasup 11 , 4 \\n 2 in the string ", () => {
 	expect(add("//Wasup\n21Wasup11,4\n2")).toBe(38);
 });
+
+// The sum of three numbers with a mix of custom delimiter Wasup and , \\n
+it("Should throw exception when //** \\n -1 ** 5 , -8 \\n 7 in the string ", () => {
+	expect(() => {
+		add("//**\n-1**5,-8\n7")
+	}).toThrow();
+});
