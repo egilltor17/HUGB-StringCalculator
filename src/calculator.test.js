@@ -82,7 +82,7 @@ it("Should throw exception when //-+- \\n 61 -+- 14 , -41 \\n 7 in the string ",
 	}).toThrow();
 });
 
-// The sum of three numbers with a mix of custom delimiter --- and , \\n with a negative number
+// The sum of three numbers with a mix of custom delimiter -x- and , \\n with a negative number
 it("Should return 123 when //-+- \\n 61 -+- 14 , 41 \\n 7 in the string ", () => {
 	expect(add("//-+-\n61-+-14,41\n7")).toBe(123);
 });
