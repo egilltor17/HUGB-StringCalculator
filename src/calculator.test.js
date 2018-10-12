@@ -32,6 +32,13 @@ it("Should return 9 when 6 \\n 2 ,1 in the string ", () => {
 });
 
 // Negative exception
+it("Should throw exception when -7 in the string", () => {
+	expect(() => {
+		add("-7")
+	}).toThrow();
+});
+
+// Negative exception
 it("Should throw exception when -6,  2 in the string", () => {
 	expect(() => {
 		add("-6,2")
