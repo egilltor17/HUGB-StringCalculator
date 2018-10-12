@@ -38,6 +38,11 @@ it("Should throw exception when -6,  2 in the string", () => {
 	}).toThrow();
 });
 
+// The sum of one number larger than 1000
+it("Should return 0 when 2001 in the string ", () => {
+	expect(add("2001")).toBe(0);
+});
+
 // The sum of three numbers with numbers larger than 1000
 it("Should return 27 when 6 \\n 21 ,1001 in the string ", () => {
 	expect(add("6\n21,1001")).toBe(27);

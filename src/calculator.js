@@ -19,7 +19,11 @@ function add(numbers) {								/*** Adds numbers from a string */
 		return sum(numberArr);						// Returns the sum of the numbers in numberArr
 		
 	} else {										/** Returns the number if there was only one number in the string */									
-		return parseInt(numbers);
+		if(parseInt(numbers) <= 1000) {				// Returns the number if it is less or equal to 1000 
+			return parseInt(numbers);
+		} else {									// Else returns 0
+			return 0;
+		}
 	}
 }
 
